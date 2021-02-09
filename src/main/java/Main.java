@@ -11,7 +11,7 @@ public class Main {
 
         System.out.println("Выберите интересующую вас информацию: \n A - JsonData \n B - advertisment \n" +
                 "C - news ");
-        Scanner sc = new Scanner(System.in );
+        Scanner sc = new Scanner(System.in);
         String enumeration = sc.nextLine();
 
         switch (enumeration) {
