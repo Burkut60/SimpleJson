@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Menu {
 
     public static void menu() throws ParseException, IOException {
+        ParserJson parserJson = new ParserJson();
 
         System.out.println("Выберите интересующую вас информацию: \n A - JsonData \n B - advertisment \n" +
                 "C - news \n Для выхода  D ");
@@ -18,9 +19,9 @@ public class Menu {
             case "A": {
                 String dbUrl = "https://my-json-server.typicode.com/Shiplayer/ExampleJsonData/db";
 
-                URL myUrl = ParserJson.createUrl(dbUrl);
-                String parserReader = ParserJson.parsUrl(myUrl);
-                ParserJson.parseObject(parserReader);
+                URL myUrl = parserJson.createUrl(dbUrl);
+                String parserReader = parserJson.parsUrl(myUrl);
+                parserJson.parseObject(parserReader);
                 Menu.menu();
                 break;
 
@@ -28,18 +29,18 @@ public class Menu {
             case "B": {
                 String advertUrl =
                         "https://my-json-server.typicode.com/Shiplayer/ExampleJsonData/advertisment";
-                URL myUrl = ParserJson.createUrl(advertUrl);
-                String parserReader = ParserJson.parsUrl(myUrl);
-                ParserJson.parserArray(parserReader);
+                URL myUrl = parserJson.createUrl(advertUrl);
+                String parserReader = parserJson.parsUrl(myUrl);
+                parserJson.parserArray(parserReader);
                 Menu.menu();
                 break;
 
             }
             case "C": {
                 String newsUrl = "https://my-json-server.typicode.com/Shiplayer/ExampleJsonData/news";
-                URL myUrl = ParserJson.createUrl(newsUrl);
-                String parserReader = ParserJson.parsUrl(myUrl);
-                ParserJson.parserArray(parserReader);
+                URL myUrl = parserJson.createUrl(newsUrl);
+                String parserReader = parserJson.parsUrl(myUrl);
+                parserJson.parserArray(parserReader);
                 Menu.menu();
                 break;
             }
